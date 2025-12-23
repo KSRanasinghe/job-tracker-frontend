@@ -1,11 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import AddJob from './pages/AddJob';
 import './App.css'
 
 function App() {
   return (
-    <div>
-      <h1>Job Application Tracker</h1>
-      <p>Frontend initialized</p>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/add-job' element={<AddJob/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
