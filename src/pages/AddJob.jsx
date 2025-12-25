@@ -1,23 +1,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API_URL from '../services/api';
+import { apiFetch } from '../services/apiClient';
 
 function AddJob() {
   const [company, setCompany] = useState('');
   const [position, setPosition] = useState('');
   const navigate = useNavigate();
-  const token = localStorage.getItem('token');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await fetch(`${API_URL}/jobs`, {
+      await apiFetch('/jobs', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
         body: JSON.stringify({
           company,
           position,

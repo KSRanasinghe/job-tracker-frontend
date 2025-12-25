@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import API_URL from '../services/api';
+import { apiFetch } from '../services/apiClient';
 
 function Dashboard() {
   const [jobs, setJobs] = useState([]);
@@ -7,20 +8,9 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const token = localStorage.getItem('token');
-
       try {
-        const res = await fetch(`${API_URL}/jobs`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
 
-        if (!res.ok) {
-          throw new Error('Failed to fetch jobs');
-        }
-
-        const data = await res.json();
+        const data = await apiFetch('/jobs');
         setJobs(data);
 
       } catch (error) {
@@ -34,15 +24,9 @@ function Dashboard() {
   }, []);
 
   const handleDelete = async (id) => {
-    const token = localStorage.getItem('token');
 
     try {
-      await fetch(`${API_URL}/jobs/${id}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await apiFetch(`/jobs/${id}`, { method: 'DELETE' });
       setJobs((prev) => prev.filter((job) => job._id !== id));
     } catch (error) {
       console.error('Failed to delete job', error);
@@ -50,19 +34,12 @@ function Dashboard() {
   };
 
   const handleStatusChange = async (id, newStatus) => {
-    const token = localStorage.getItem('token');
 
     try {
-      const res = await fetch(`${API_URL}/jobs/${id}`, {
+      const updatedJob = await apiFetch(`/jobs/${id}`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
         body: JSON.stringify({ status: newStatus }),
       });
-
-      const updatedJob = await res.json();
 
       setJobs((prev) =>
         prev.map((job) =>
