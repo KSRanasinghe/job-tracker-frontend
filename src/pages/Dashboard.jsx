@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import API_URL from '../services/api';
 import { apiFetch } from '../services/apiClient';
 
 function Dashboard() {
@@ -54,39 +53,43 @@ function Dashboard() {
   if (loading) return <p>Loading jobs...</p>;
 
   return (
-    <div>
-      <h2>Dashboard</h2>
+    <>
+      <title>Dashboard | ApplyHub | One place for every application</title>
 
-      {jobs.length === 0 && <p>No job applications yet.</p>}
+      <div>
+        <h2>Dashboard</h2>
 
-      <ul>
-        {jobs.map((job) => (
-          <li key={job._id}>
-            <strong>{job.company}</strong> — {job.position}
+        {jobs.length === 0 && <p>No job applications yet.</p>}
 
-            <select
-              value={job.status}
-              onChange={(e) =>
-                handleStatusChange(job._id, e.target.value)
-              }
-              style={{ marginLeft: '1rem' }}
-            >
-              <option value="applied">Applied</option>
-              <option value="interview">Interview</option>
-              <option value="offer">Offer</option>
-              <option value="rejected">Rejected</option>
-            </select>
+        <ul>
+          {jobs.map((job) => (
+            <li key={job._id}>
+              <strong>{job.company}</strong> — {job.position}
 
-            <button
-              onClick={() => handleDelete(job._id)}
-              style={{ marginLeft: '1rem' }}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+              <select
+                value={job.status}
+                onChange={(e) =>
+                  handleStatusChange(job._id, e.target.value)
+                }
+                style={{ marginLeft: '1rem' }}
+              >
+                <option value="applied">Applied</option>
+                <option value="interview">Interview</option>
+                <option value="offer">Offer</option>
+                <option value="rejected">Rejected</option>
+              </select>
+
+              <button
+                onClick={() => handleDelete(job._id)}
+                style={{ marginLeft: '1rem' }}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 

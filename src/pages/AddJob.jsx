@@ -10,11 +10,11 @@ function AddJob() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!company.trim() || !position.trim()) {
       alert('Company and position are required');
       return;
-    }    
+    }
 
     try {
       await apiFetch('/jobs', {
@@ -32,33 +32,37 @@ function AddJob() {
   };
 
   return (
-    <div>
-      <h2>Add Job</h2>
+    <>
+      <title>Add Job | ApplyHub | One place for every application</title>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Company</label>
-          <br />
-          <input
-            type="text"
-            value={company}
-            onChange={(e) => setCompany(e.target.value)}
-          />
-        </div>
+      <div>
+        <h2>Add Job</h2>
 
-        <div>
-          <label>Position</label>
-          <br />
-          <input
-            type="text"
-            value={position}
-            onChange={(e) => setPosition(e.target.value)}
-          />
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Company</label>
+            <br />
+            <input
+              type="text"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </div>
 
-        <button type="submit">Add Job</button>
-      </form>
-    </div>
+          <div>
+            <label>Position</label>
+            <br />
+            <input
+              type="text"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
+            />
+          </div>
+
+          <button type="submit">Add Job</button>
+        </form>
+      </div>
+    </>
   );
 }
 

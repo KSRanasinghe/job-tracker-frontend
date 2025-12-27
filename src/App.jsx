@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -6,25 +6,38 @@ import AddJob from './pages/AddJob';
 import MainLayout from './layouts/MainLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css'
+import Home from './pages/Home';
+import PublicRoute from './components/PublicRoute';
+
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Navigate to="/dashboard" />} />
+        <Route path='/'
+          element={
+            <PublicRoute>
+              <Home />
+            </PublicRoute>
+          } />
 
         <Route path='/login'
           element={
-            <MainLayout>
-              <Login />
-            </MainLayout>
+            <PublicRoute>
+              <MainLayout>
+                <Login />
+              </MainLayout>
+            </PublicRoute>
           } />
 
         <Route path='/register'
           element={
-            <MainLayout>
-              <Register />
-            </MainLayout>
+            <PublicRoute>
+              <MainLayout>
+                <Register />
+              </MainLayout>
+            </PublicRoute>
           } />
 
         <Route path='/dashboard'
