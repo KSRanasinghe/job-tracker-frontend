@@ -1,0 +1,25 @@
+.auth-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 36px;
+  background: var(--green);
+  font-family: var(--poppins);
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid var(--gray);
+  transition: 0.3s linear;
+}
+
+.auth-btn:hover {
+  border-radius: 60px;
+}
+
+/*! Large View*/
+@media (min-width: 1600px) {
+  .auth-btn {
+    padding: 18px 43px;
+    font-size: 20px;
+  }
+}

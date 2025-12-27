@@ -1,13 +1,81 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --poppins: "Poppins", sans-serif;
+  --genos: "Genos", sans-serif;
+
+  --green: #24AE97;
+  --dark-green: #125969;
+  --gray: #474747;
 }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
+
+.global p,
+.global h1,
+.global h2,
+.global h3,
+.global h4,
+.global h5,
+.global h6,
+.global ul {
+  margin: 0px;
+}
+
+.global a:hover {
+  text-decoration: none;
+}
+
+.custom-button {
+  position: unset !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  height: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: unset !important;
+  background: unset !important;
+  color: unset !important;
+  font-family: unset !important;
+  font-size: unset !important;
+  line-height: unset !important;
+  letter-spacing: unset !important;
+  text-align: unset !important;
+  vertical-align: unset !important;
+}
+
+/*! Mobile */
+@media (max-width: 767px) {}
+
+/*! ios */
+@media (max-width: 340px) {}
+
+/*! windows */
+@media (min-width: 451px) and (max-width: 767px) {}
+
+/*! tab portrait*/
+@media (min-width: 768px) and (max-width: 991px) {
+  /*!Keep this*/
+}
+
+/*! tab landscape*/
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/*! 1280 resolution */
+@media (min-width: 1280px) and (max-width: 1365px) {}
+
+/*! 1366 resolution */
+@media (min-width: 1366px) and (max-width: 1399px) {}
+
+/*! 1440 resolution */
+@media (min-width: 1440px) and (max-width: 1599px) {
+  /*!Keep this*/
+}
+
+/*! Large View*/
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1560px;
+  }
+}
+
+@media (min-width: 1920px) {
+  /*!Keep this*/
 }
