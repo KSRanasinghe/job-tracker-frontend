@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './Home.css'
-import AuthBtn from "../components/AuthBtn";
+import LinkButton from "../components/LinkButton";
 
 function Home() {
   const currentYear = new Date().getFullYear();
@@ -38,7 +38,7 @@ function Home() {
                     </ul>
                     <div className="auth-box">
                       <Link className="custom-nav-link" to="/login" >Sign In</Link>
-                      <AuthBtn to="/register">Get Started</AuthBtn>
+                      <LinkButton to="/register" variant="success">Get Started</LinkButton>
                     </div>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ function Home() {
               <h1>Track Your Applications. Stay in Control.</h1>
               <p>We helps you to manage your job applications in one place.
                 Stop guessing where you applied, avoid duplicate applications, and clearly understand the progress of every opportunity — <br />all at a glance.</p>
-              <AuthBtn to="/register">Get Started</AuthBtn>
+              <LinkButton to="/register" variant="success">Get Started</LinkButton>
             </div>
             <div className="col-12 col-lg-6 content-2">
               <img src="images/section-a-1.png" className="img-fluid" alt="ApplyHub" />

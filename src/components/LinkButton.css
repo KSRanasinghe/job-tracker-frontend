@@ -1,0 +1,13 @@
+.link-btn {
+  text-decoration: none;
+  padding: 15px 36px;
+  font-size: 18px;
+}
+
+/*! Large View*/
+@media (min-width: 1600px) {
+  .link-btn {
+    padding: 17px 40px;
+    font-size: 20px;
+  }
+}

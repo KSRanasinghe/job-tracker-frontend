@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import API_URL from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import './Login.css'
-import ApplyHubBtn from '../components/ApplyHubBtn';
+import Button from '../components/Button';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -92,9 +92,9 @@ function Login() {
                         />
                       </div>
                       {error && <h6 className='error-msg'>{error}</h6>}
-                      <ApplyHubBtn disabled={loading}>
+                      <Button type="submit" variant='success-lg' disabled={loading}>
                         {loading ? 'Please wait...' : 'Log in to Account'}
-                      </ApplyHubBtn>
+                      </Button>
                     </form>
                   </div>
                 </div>

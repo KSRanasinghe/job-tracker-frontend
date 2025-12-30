@@ -1,21 +1,26 @@
-.main-navbar-section {
+.main-nav {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(71, 71, 71, 0.2);
 }
 
-.main-navbar-section .navbar {
+.main-nav .content-1{
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .navbar {
   width: 100%;
 }
 
-.main-navbar-section .navbar-nav {
+.main-nav .navbar-nav {
   width: 100%;
   justify-content: flex-end;
   align-items: center;
   gap: 15px;
 }
 
-.main-navbar-section .profile-btn {
+.main-nav .profile-btn {
   text-decoration: none;
   font-family: var(--poppins);
   font-size: 16px;
@@ -32,7 +37,7 @@
   color: #fff;
 }
 
-.main-navbar-section .dropdown .dropdown-menu {
+.main-nav .dropdown .dropdown-menu {
   margin-top: 6px;
   border-radius: 12px;
   min-width: 240px;
@@ -41,19 +46,18 @@
   filter: drop-shadow(0px 2px 4px rgba(51, 51, 51, 0.2));
 }
 
-.main-navbar-section .dropdown .dropdown-menu[data-bs-popper] {
-  left: auto;
-  right: 0;
+.main-nav .dropdown .dropdown-item:active{
+  background: var(--green);
 }
 
-.main-navbar-section .dropdown-menu .profile {
+.main-nav .dropdown-menu .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 15px;
 }
 
-.main-navbar-section .profile-icon {
+.main-nav .profile-icon {
   font-family: var(--poppins);
   font-size: 18px;
   font-weight: 700;
@@ -69,14 +73,14 @@
   margin-bottom: 10px;
 }
 
-.main-navbar-section .profile h5{
+.main-nav .profile h5{
   font-family: var(--poppins);
   font-size: 18px;
   font-weight: 600;
   color: var(--gray);
 }
 
-.main-navbar-section .profile h6{
+.main-nav .profile h6{
   font-family: var(--poppins);
   font-size: 11px;
   font-weight: 400;

@@ -1,0 +1,34 @@
+.ah-btn {
+  border: 1px solid var(--gray);
+  padding: 6px 15px;
+  border-radius: 6px;
+  font-family: var(--poppins);
+  font-size: 16px;
+  font-weight: 400;
+  transition: 0.3s linear;
+  display: inline-block;
+}
+
+.ah-btn-primary {
+  background: transparent;
+  color: var(--gray);
+}
+
+.ah-btn-success,
+.ah-btn-success-lg {
+  background: var(--green);
+  color: #fff;
+  font-weight: 500;
+}
+
+.ah-btn-success-lg {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.ah-btn-success:hover,
+.ah-btn-success-lg:hover {
+  border-radius: 60px;
+}

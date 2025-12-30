@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import AuthBtn from '../components/AuthBtn';
 import './MainLayout.css'
 
 function MainLayout({ children }) {
@@ -9,7 +8,7 @@ function MainLayout({ children }) {
 
   return (
     <>
-      <div className="container-fluid main-navbar-section global">
+      <div className="container-fluid main-nav global">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-2 content-1">
@@ -26,17 +25,17 @@ function MainLayout({ children }) {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav">
-                      <div class="dropdown">
-                        <a class="profile-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <div className="dropdown">
+                        <a className="profile-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           {initial}
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul className="dropdown-menu dropdown-menu-end">
                           <div className='profile'>
                             <p className='profile-icon'>{initial}</p>
                             <h5>{user.firstName} {user.lastName}</h5>
                             <h6>{user.email}</h6>
                           </div>
-                          <li><hr class="dropdown-divider" /></li>
+                          <li><hr className="dropdown-divider" /></li>
                           <li>
                             <button
                               onClick={logout}

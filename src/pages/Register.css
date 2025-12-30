@@ -93,6 +93,7 @@
   font-weight: 400;
   display: block;
   text-align: center;
+  margin-top: 15px;
 }
 
 .reg-section-a .auth-link a {

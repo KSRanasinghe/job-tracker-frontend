@@ -1,0 +1,65 @@
+.dashboard {
+  padding-top: 60px;
+}
+
+.dashboard .content-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.dashboard h1 {
+  font-family: var(--poppins);
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--gray);
+}
+
+.dashboard .job-btn{
+  font-size: 16px;
+  padding: 6px 15px;
+}
+
+.dashboard .job-btn:hover{
+  box-shadow: 0px 0px 0px 3px rgba(51, 51, 51, 0.1);
+}
+
+.dashboard .card {
+  border: none;
+  filter: drop-shadow(0px 3px 4px rgba(51, 51, 51, 0.2));
+  min-height: 500px;
+  border-radius: 15px;
+}
+
+.dashboard .card-body{
+  padding: 15px 35px;
+}
+
+.dashboard .empty-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.dashboard .empty-view img {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.dashboard .empty-view p{
+  font-family: var(--poppins);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.dashboard table{
+  font-family: var(--poppins);
+}
+
+.dashboard .form-select{
+  width: auto;
+}

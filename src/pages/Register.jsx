@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import API_URL from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import './Register.css'
-import ApplyHubBtn from '../components/ApplyHubBtn';
+import Button from '../components/Button';
 
 function Register() {
 
@@ -135,9 +135,9 @@ function Register() {
                         />
                       </div>
                       {error && <h6 className='error-msg'>{error}</h6>}
-                      <ApplyHubBtn disabled={loading}>
+                      <Button type='submit' variant='success-lg' disabled={loading}>
                         {loading ? 'Please wait...' : 'Create ApplyHub Account'}
-                      </ApplyHubBtn>
+                      </Button>
 
                       <span className='auth-link'>
                         <Link to='/login'>Sign In</Link>
